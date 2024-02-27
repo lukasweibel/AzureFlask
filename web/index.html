@@ -3,18 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Addition</title>
-    <script>
-        // Function to handle the addition form submission
-        async function handleAddition(event) {
-            event.preventDefault(); // Prevent the form from submitting in the traditional way
-            const formData = new FormData(event.target); // Get the form data
-            const a = formData.get('a'); // Extract the value of 'a'
-            const b = formData.get('b'); // Extract the value of 'b'
-            const response = await fetch(`/add?a=${a}&b=${b}`); // Send a GET request to the /add endpoint with 'a' and 'b' as query parameters
-            const result = await response.json(); // Parse the JSON response
-            document.getElementById('result').textContent = `Sum: ${result.sum}`; // Display the result
-        }
-    </script>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <h1>Add Two Numbers</h1>
@@ -23,6 +13,6 @@
         <input type="number" name="b" required placeholder="Enter number b">
         <button type="submit">Add</button>
     </form>
-    <div id="result"></div> <!-- The result will be displayed here -->
+    <div id="result"></div>
 </body>
 </html>
